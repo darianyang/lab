@@ -55,7 +55,7 @@ ax2.text(13, 21000, "Theoretical Dimer")
 #ax2.tick_params(axis='y', labelcolor='tab:red')
 
 # Add a legend
-fig.legend(loc='upper right', bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes)
+fig.legend(loc='upper right', bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes, frameon=False)
 
 # Show the plot
 #plt.title('CA-CTD SEC-MALS')
