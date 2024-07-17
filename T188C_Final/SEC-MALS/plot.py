@@ -18,7 +18,7 @@ fig, ax1 = plt.subplots()
 # secondary y-axis
 ax2 = ax1.twinx()
 
-labels = ["WT CA-CTD 200 $\mu$M", "WT CA-CTD 10 $\mu$M", "T188C 200$\mu$M", "T188C 10 $\mu$M" ]
+labels = ["WT CA-CTD 200 $\mu$M", "WT CA-CTD 10 $\mu$M", "T188C 200 $\mu$M", "T188C 10 $\mu$M" ]
 colors = ['blue', 'cornflowerblue', 'red', 'lightsalmon']
 idx = 0
 
@@ -44,7 +44,7 @@ ax1.set_xlim(12.5,22.5)
 ax1.set_ylabel('UV (Normalized Abs)')
 #ax1.tick_params(axis='y', labelcolor='tab:blue')
 
-ax2.set_ylabel('Molar Mass (kDa)')
+ax2.set_ylabel('Molar Mass (Daltons)')
 ax2.set_ylim(1000,100000)
 # 9.95 kDa
 ax2.axhline(9946, color="gray", linestyle="--")
