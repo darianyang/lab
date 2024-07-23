@@ -1,11 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#plt.style.use("~/github/wedap/wedap/styles/default.mplstyle")
+plt.style.use("~/github/wedap/wedap/styles/default.mplstyle")
 
 # Read the CSV file
 file_path = 'CA-CTD-MALS.csv'
 file_path = 'CA-CTD-MALS-filtered.csv'
+file_path = 'CA-CTD-MALS-filtered2.csv'
 df = pd.read_csv(file_path)
 
 # Extract columns for plotting
@@ -14,12 +15,14 @@ num_columns = df.shape[1]
 num_sets = num_columns // 4
 
 # Create a figure and axis
-fig, ax1 = plt.subplots()
+fig, ax1 = plt.subplots(figsize=(10,5))
 # secondary y-axis
 ax2 = ax1.twinx()
 
-labels = ["WT CA-CTD 200 $\mu$M", "WT CA-CTD 10 $\mu$M", "T188C 200 $\mu$M", "T188C 10 $\mu$M" ]
+labels = ["WT CA-CTD: 200 $\mu$M", "WT CA-CTD: 10 $\mu$M", "T188C: 200 $\mu$M", "T188C: 10 $\mu$M" ]
+labels = ["WT CA-CTD: 200 $\mu$M", "WT CA-CTD: 10 $\mu$M", "T188C (RED): 200 $\mu$M", "T188C (RED): 10 $\mu$M",  "T188C (OX): 200 $\mu$M", "T188C (OX): 10 $\mu$M"  ]
 colors = ['blue', 'cornflowerblue', 'red', 'lightsalmon']
+colors = ['black', 'gray', 'blue', 'cornflowerblue', 'red', 'lightsalmon',]
 idx = 0
 
 # Plot UV data and molar mass data
@@ -45,7 +48,7 @@ ax1.set_ylabel('UV (Normalized Abs)')
 #ax1.tick_params(axis='y', labelcolor='tab:blue')
 
 ax2.set_ylabel('Molar Mass (Daltons)')
-ax2.set_ylim(1000,100000)
+ax2.set_ylim(1000,200000)
 # 9.95 kDa
 ax2.axhline(9946, color="gray", linestyle="--")
 ax2.text(13, 10500, "Theoretical Monomer")
@@ -60,5 +63,5 @@ fig.legend(loc='upper right', bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes
 # Show the plot
 #plt.title('CA-CTD SEC-MALS')
 plt.tight_layout()
-plt.savefig("SEC-MALS.pdf")
+plt.savefig("SEC-MALS-3.pdf")
 plt.show()
